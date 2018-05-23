@@ -7,12 +7,30 @@ import App from './App'
 {{#router}}
 import router from './router'
 {{/router}}
+{{#vuex}}
+import store from './store'
+{{/vuex}}
+{{#filters}}
+import filters from '@/utils/filters'
+{{/filters}}
+
+import '@/assets/styles/index.scss'
 
 Vue.config.productionTip = false
+
+{{#filters}}
+// 置入Filter
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+{{/filters}}
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  {{$vuex}}
+  store,
+  {{/vuex}}
   {{#router}}
   router,
   {{/router}}

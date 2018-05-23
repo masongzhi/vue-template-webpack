@@ -31,7 +31,7 @@ module.exports = {
       return templateVersion
     },
   },
-  
+
   prompts: {
     name: {
       when: 'isNotTest',
@@ -73,6 +73,16 @@ module.exports = {
       when: 'isNotTest',
       type: 'confirm',
       message: 'Install vue-router?',
+    },
+    vuex: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Install vuex?',
+    },
+    filters: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Init filters?',
     },
     lint: {
       when: 'isNotTest',
@@ -170,6 +180,9 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    'src/store/index': 'vuex',
+    'src/page/store.js': 'vuex',
+    'src/utils/filters': 'filters',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

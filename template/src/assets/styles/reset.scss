@@ -1,0 +1,44 @@
+#app {
+  height: 100%;
+}
+
+body {
+  font: 12px Avenir, Helvetica, Arial, sans-serif;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: #20a0ff;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+em {
+  font-style: normal
+}
+
+li {
+  list-style: none
+}
+
+img {
+  border: 0;
+  vertical-align: middle
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+p {
+  word-wrap: break-word
+}
