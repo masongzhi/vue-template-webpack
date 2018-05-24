@@ -4,17 +4,29 @@
 
 const path = require('path')
 
+{{#mock}}
+const mockProxyTable = {
+  '/api': {
+    target: 'http://localhost:3000',
+    changeOrigin: true
+  }
+}
+{{/mock}}
+
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {{#mock}}process.env.USE_MOCK ? mockProxyTable : {{/mock}}{},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    {{#mock}}
+    mockPort: 3000,
+    {{/mock}}
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

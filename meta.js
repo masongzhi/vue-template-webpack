@@ -84,6 +84,11 @@ module.exports = {
       type: 'confirm',
       message: 'Init filters?',
     },
+    mock: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Use mock api?'
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
@@ -183,6 +188,7 @@ module.exports = {
     'src/store/index': 'vuex',
     'src/page/store.js': 'vuex',
     'src/utils/filters': 'filters',
+    'mock': 'mock',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
