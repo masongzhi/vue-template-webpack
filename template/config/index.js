@@ -3,8 +3,8 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
 {{#mock}}
+
 const mockProxyTable = {
   '/api': {
     target: 'http://localhost:3000',

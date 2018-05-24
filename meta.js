@@ -185,10 +185,10 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
-    'src/store/index': 'vuex',
-    'src/page/store.js': 'vuex',
-    'src/utils/filters': 'filters',
-    'mock': 'mock',
+    'src/store/*': 'vuex',
+    'src/page/**/store.js': 'vuex',
+    'src/utils/filters/*': 'filters',
+    'mock/**/**/*': 'mock',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
