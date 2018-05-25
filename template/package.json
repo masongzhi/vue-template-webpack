@@ -55,13 +55,13 @@
     "eslint-config-airbnb-base": "^11.3.0",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.7.0",
+    {{/if_eq}}
+    {{/lint}}
     {{#mock}}
     "json-server": "^0.12.2",
     "cross-env": "^5.1.6",
     "concurrently": "^3.5.1",
     {{/mock}}
-    {{/if_eq}}
-    {{/lint}}
     {{#if_eq runner "jest"}}
     "babel-jest": "^21.0.2",
     "babel-plugin-dynamic-import-node": "^1.2.0",
