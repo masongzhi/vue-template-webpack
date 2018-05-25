@@ -188,7 +188,7 @@ module.exports = {
     'src/store/*': 'vuex',
     'src/page/**/store.js': 'vuex',
     'src/utils/filters/*': 'filters',
-    'mock/**/**/*': 'mock',
+    'mock/**/*': 'mock',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
