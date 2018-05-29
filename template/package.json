@@ -26,8 +26,11 @@
     {{#lint}}
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
     {{/lint}}
-    "build": "node build/build.js"
-  },
+    "build": "node build/build.js",
+    {{#prettier}}
+    "format": "prettier --write '{src,__{mock,dist}__}/**/*.{js,vue,scss}'"
+    {{/prettier}}
+},
   "dependencies": {
     "axios": "^0.18.0",
     "lodash": "^4.17.10",
@@ -57,6 +60,11 @@
     "eslint-plugin-import": "^2.7.0",
     {{/if_eq}}
     {{/lint}}
+    {{#prettier}}
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "1.12.1",
+    {{/prettier}}
     {{#mock}}
     "json-server": "^0.12.2",
     "cross-env": "^5.1.6",

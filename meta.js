@@ -116,6 +116,11 @@ module.exports = {
         },
       ],
     },
+    prettier: {
+      when: 'isNotTest && !lint',
+      type: 'confirm',
+      message: 'Use prettier'
+    },
     unit: {
       when: 'isNotTest',
       type: 'confirm',
@@ -189,6 +194,7 @@ module.exports = {
     'src/page/**/store.js': 'vuex',
     'src/utils/filters/*': 'filters',
     'mock/**/*': 'mock',
+    '.prettierrc.js': 'prettier'
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
