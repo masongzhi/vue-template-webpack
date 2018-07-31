@@ -7,7 +7,12 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     {{#mock}}
+    {{#if_eq mockConfig "json-server"}}
     "mock": "nodemon mock/server.js",
+    {{/if_eq}}
+    {{#if_eq mockConfig "ma-mock"}}
+    "mock": "mamock",
+    {{/if_eq}}
     "devMock": "cross-env USE_MOCK=true concurrently \"npm start\" \"npm run mock\"",
     {{/mock}}
     {{#if_eq runner "jest"}}

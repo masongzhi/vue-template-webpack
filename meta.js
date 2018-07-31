@@ -89,6 +89,23 @@ module.exports = {
       type: 'confirm',
       message: 'Use mock api?'
     },
+    mockConfig: {
+      when: 'isNotTest && mock',
+      type: 'list',
+      message: 'Pick an mock module',
+      choices: [
+        {
+          name: 'json-server (https://github.com/typicode/json-server)',
+          value: 'json-server',
+          short: 'json-server',
+        },
+        {
+          name: 'ma-mock (https://github.com/masongzhi/ma-mock)',
+          value: 'ma-mock',
+          short: 'ma-mock',
+        },
+      ]
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
@@ -193,7 +210,8 @@ module.exports = {
     'src/store/*': 'vuex',
     'src/page/**/store.js': 'vuex',
     'src/utils/filters/*': 'filters',
-    'mock/**/*': 'mock',
+    'mock/data/**/*': 'mock && mockConfig === "json-server"',
+    '.mamockrc.js': 'mock && mockConfig === "ma-mock"',
     '.prettierrc.js': 'prettier'
   },
   complete: function(data, { chalk }) {
